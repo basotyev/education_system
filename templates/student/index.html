@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for el in courses %}
+        <h2>{{ el.course_name }}</h2>
+        <p>{{ el.course_description }}</p>
+    {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.user_id }} <br>
+        {{ form.course_id }} <br>
+        <button type="submit">enroll</button>
+    </form>
+</body>
+</html>

@@ -28,6 +28,8 @@ class Course(models.Model):
     course_name = models.CharField(max_length=256)
     course_description = models.TextField()
 
+    def __str__(self):
+        return self.course_name
 
 class Course_lessons(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
