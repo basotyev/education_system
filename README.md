@@ -25,7 +25,7 @@
     gives a certificate with an achieved level (Gold, Silver, Bronze).
     In addition, there are [Decode](https://decode.kz/ "Курсы по программированию"), [KnewIT](https://knewit.kz/ "школа программирования в Алматы") that also have programming       courses online/offline. Nevertheless, the courses are paid and we cannot analyze a platform they are using.
 
---- 
+    --- 
 
 + c.
     The main auditory for our project are people who want to start to learn programming.
