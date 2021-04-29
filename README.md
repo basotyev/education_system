@@ -1,4 +1,4 @@
-***Topic - Python teaching system
+### Topic - Python teaching system
 + a.
     Nowadays programming is becoming one of the essential skills even though your field of
     work or study is not related to it. Because of that, our team decided to choose a project, which
@@ -7,6 +7,9 @@
     among other programming languages, since the code written on this language has clear and easy
     to read syntax. Moreover, providing a coding interaction with the user is such a challenging part
     for developers.
+    
+    ---
+    
 + b.
     First of all, the main competitor is [SoloLearn](https://www.sololearn.com/ "Sololearn")
     platform that is available as a web application and also as a mobile application (since it is available
@@ -20,9 +23,11 @@
     assignments. The courses are simply represented as video materials. After each part, there is
     homework. According to the watch list and submitted assignments at the end of a course the system
     gives a certificate with an achieved level (Gold, Silver, Bronze).
-    In addition, there are [Decode](https://decode.kz/ "Курсы по программированию") , [KnewIT](https://knewit.kz/ "школа программирования в Алматы") that also have programming courses
-    online/offline. Nevertheless, the courses are paid and we cannot analyze a platform they are using.
-6 c.
+    In addition, there are [Decode](https://decode.kz/ "Курсы по программированию"), [KnewIT](https://knewit.kz/ "школа программирования в Алматы") that also have programming       courses online/offline. Nevertheless, the courses are paid and we cannot analyze a platform they are using.
+
+--- 
+
++ c.
     The main auditory for our project are people who want to start to learn programming.
     Because nowadays IT is the most popular and most chosen profession. On top of that, IT
     professionals are in demand in a market and they are paid very well, which means that they are
@@ -32,6 +37,9 @@
     With the extended functionality(i.e. contester) the system may also be helpful for students
     who are interested in ACM. With the following dashboard and achievements that will be a good
     platform to compete.
+    
+    ---
+    
 + d.
     The main goal of our platform is to pass all the knowledge that we know to our students
     and the second main goal is to make studying with us easy and fun. Consequently, the platform
