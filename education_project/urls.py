@@ -27,5 +27,4 @@ urlpatterns += [
 urlpatterns += [
     path('', RedirectView.as_view(url='/accounts/login', permanent=True)),
 ]
-
 LOGIN_REDIRECT_URL = '/'
