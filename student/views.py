@@ -5,6 +5,9 @@ from .forms import EnrolleCourseForm
 
 # Create your views here.
 def index(request):
+    return render(request, 'index.html')
+
+def courses(request):
     if request.method == 'POST':
         form = EnrolleCourseForm(request.POST)
         if form.is_valid():
