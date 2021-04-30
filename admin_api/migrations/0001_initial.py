@@ -2,7 +2,7 @@
 
 from django.db import migrations, models
 
-
+# Branch check out
 class Migration(migrations.Migration):
 
     initial = True

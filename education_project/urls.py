@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student/', include('student.urls'))
 ]
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+]
+urlpatterns += [
+    path('', RedirectView.as_view(url='/accounts/login', permanent=True)),
+]
+LOGIN_REDIRECT_URL = '/'
