@@ -18,13 +18,13 @@ from django.urls import path, include
 from django.views.generic import TemplateView, RedirectView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('student/', include('student.urls'))
+    path('', include('student.urls')),
+    path('admin/', admin.site.urls)
 ]
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
 ]
 urlpatterns += [
-    path('', RedirectView.as_view(url='/accounts/login', permanent=True)),
+    path('accounts/login', RedirectView.as_view(url='/accounts/login', permanent=True)),
 ]
 LOGIN_REDIRECT_URL = '/'
