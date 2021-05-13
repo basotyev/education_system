@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Main page
+    </title>
+    {% load static %}
+    <link rel="stylesheet"  href="{%  static  'css/main.css'  %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://kit.fontawesome.com/80480a3d8b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+			<a href="index.html" ><img src="img\headlogo.png" alt="" class="logoh"></a>
+
+	        <!--Navigation bar-->
+	        <nav>
+	        	<ul class="navigation">
+		         	<li><a href="index.html"><i class="fas fa-home home"></i> Home</a></li>
+		       	 	<li><a href="about.html" class="active_link"><i class="fas fa-align-left about"></i> About</a></li>
+		       	 	<li><a href="gallery.html"><i class="fas fa-camera gallery"></i> Gallery</a></li>
+		            <li><a href="team.html"><i class="fas fa-users team"></i> Team</a></li>
+		            <li><a href="login.html"><i class="fas fa-sign-in-alt login"></i> Login</a></li>
+	            </ul>
+	        </nav>
+ 			<!--Logo of menu which will show up when the screen is reduced-->
+	        <i class="menu fas fa-bars"></i>
+	        <div class="progress-container">
+    			<div class="progress-bar" id="myBar"></div>
+  			</div>
+		</header>
+
+		<main>
+			<div class="about-content shadowed">
+
+				<div class="tabs">
+
+					<div class="tabs-header">
+						<div class="tab-h active-border" data-tab = "0">Today</div>
+						<div class="tab-h" data-tab = "1">History</div>
+						<div class="tab-h" data-tab = "2">Values</div>
+					</div>
+					<div class="tabs-body">
+						<div class="tab-b" style="display: block;"> </div>
+						<div class="tab-b"> The restaurants were created after the popular k-pop group "BLackpink". All the inspiration was taken from them. The very first restaurant was opened on 9th of August in 2016, after a day when the group debuted.</div>
+						<div class="tab-b">
+							<ol>
+								<li>It has to be made with love.</li>
+								<li>Quality of the food.</li>
+								<li>The food should be not only tasty, but it has to look tasty.</li>
+								<li>The food should be served on a high level.</li>
+							</ol>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</main>
+
+  		<footer>
+        	<div class="foot">
+        		<div class="left-column">
+
+          			<div class="social_media">
+			            <a href="L" target="_blank"><i class="fab fa-facebook-f"></i></a>
+			            <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+			            <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+			            <a href="" target="_blank"><i class="fab fa-youtube"></i></a>
+			            <a href="" target="_blank"><i class="fab fa-vk"></i></a>
+          			</div>
+
+          			<p class="foot_text">© 2021 Created By <a href="" id="me">JDK team</a> All Rights Reserved.</p>
+       	 		</div>
+
+       			 <div class="right-column">
+						<h1 class="h1-r-col">Our Newsletter</h1>
+          				<div class="border"></div>
+         				<p class="border-text">Enter Your Email to get our news and updates.</p>
+          			<form action="" class="newsletter-form">
+            			<input type="text" class="mailing" placeholder="Enter Your Email">
+           				<input type="submit" class="submit_button" value="submit">
+           			</form>
+           		</div>
+           	</div>
+        </footer>
+        <!--<script type="text/javascript""></script>-->
+		<script>
+			var video = document.querySelector(".video");
+			var juice = document.querySelector(".orange-juice");
+			var button = document.getElementById("play-pause");
+
+			function togglePlayPause(){
+				if(video.paused){
+					button.className = "pause";
+					video.play();
+				}
+				else{
+					button.className = "play";
+					video.pause();
+				}
+			};
+
+			button.onclick = function() {
+				togglePlayPause();
+			};
+
+			video.addEventListener("timeupdate", function(){
+				var juicePos = video.currentTime/video.duration;
+				juice.style.width = juicePos * 100 + "%";
+				if (video.ended){
+					button.className = "play";
+				}
+			})
+
+			window.onload = function(){
+				document.querySelector('.tabs-header').addEventListener('click', fTabs);
+
+				function fTabs(event){
+					console.log(event);
+					if(event.target.className == 'tab-h'){
+						var dataTab = event.target.getAttribute('data-tab');
+
+						var tabH = document.getElementsByClassName('tab-h');
+						for( var i = 0; i<tabH.length; i++){
+							tabH[i].classList.remove('active-border');
+						}
+						event.target.classList.add('active-border');
+						var tabBody = document.getElementsByClassName('tab-b');
+						for( var i = 0; i<tabBody.length; i++){
+							if(dataTab == i)
+							{
+								tabBody[i].style.display = 'block';
+							}
+							else {
+								tabBody[i].style.display = 'none';
+							}
+						}
+					}
+				}
+			}
+		</script>
+</body>
+</html>
