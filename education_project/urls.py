@@ -20,8 +20,9 @@ from django.conf import settings
 from django.views.generic import TemplateView, RedirectView
 
 urlpatterns = [
-    path('', include('student.urls')),
-    path('admin/', admin.site.urls)
+    path('', RedirectView.as_view(url='main/')),
+    path('main/', include('student.urls')),
+    path('admin/', admin.site.urls),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
