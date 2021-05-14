@@ -7,13 +7,11 @@ from .forms import EnrolleCourseForm
 def index(request):
     return render(request, 'index.html')
 
-
 def about(request):
-    return render(request, 'about.html')
+    return  render(request, 'about.html')
 
 def team(request):
     return  render(request, 'team.html')
-
 
 def courses(request):
     if request.method == 'POST':
