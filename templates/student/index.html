@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{%extends "layout.html" %}
+
+{%block title%}
+Main page
+{%endblock%}
+{%block content%}
     {% for el in courses %}
         <h2>{{ el.course_name }}</h2>
         <p>{{ el.course_description }}</p>
@@ -15,5 +14,4 @@
         {{ form.course_id }} <br>
         <button type="submit">enroll</button>
     </form>
-</body>
-</html>
+{%endblock%}
