@@ -20,13 +20,8 @@ from django.conf import settings
 from django.views.generic import TemplateView, RedirectView
 
 urlpatterns = [
-    path('', include('student.urls')),
-    path('admin/', admin.site.urls)
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += [
-    path('accounts/', include('django.contrib.auth.urls')),
-]
-urlpatterns += [
-    path('accounts/login', RedirectView.as_view(url='/accounts/login', permanent=True)),
-]
-LOGIN_REDIRECT_URL = '/'
+    path('admin/', admin.site.urls),
+    path('', include("student.urls")),
+    path('', include('django.contrib.auth.urls')),
+    path('', include('rest_framework.urls')), # will add login button at the top right corner :)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

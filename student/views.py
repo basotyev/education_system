@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, TemplateView
+
 from admin_api.models import Course
-from .forms import EnrolleCourseForm
+from .forms import EnrolleCourseForm, SimpleUserForm
 
 
 # Create your views here.
@@ -26,3 +29,10 @@ def courses(request):
     }
     return render(request, 'student/index.html', data)
 
+class registerView(CreateView):
+    form_class = SimpleUserForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/registration.html'
+
+class ProfileView(TemplateView):
+    template_name = "registration/user_page.html"
