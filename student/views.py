@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from admin_api.models import Course
 from .forms import EnrolleCourseForm
-
+from admin_api.models import Course
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    data = {
+        'courses': Course.objects.all()
+    }
+    return render(request, 'index.html', data)
 
 def about(request):
     return  render(request, 'about.html')

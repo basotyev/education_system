@@ -10,7 +10,6 @@ class Admin(models.Model):
 class Role(models.Model):
     role_name = models.CharField(max_length=32)
 
-
 class User(models.Model):
     first_name = models.CharField(max_length=256)
     last_name = models.CharField(max_length=256)
