@@ -10,7 +10,6 @@ class Admin(models.Model):
 class Role(models.Model):
     role_name = models.CharField(max_length=32)
 
-
 class User(models.Model):
     first_name = models.CharField(max_length=256)
     last_name = models.CharField(max_length=256)
@@ -30,6 +29,7 @@ class Course(models.Model):
 
     def __str__(self):
         return self.course_name
+
 
 class Course_lessons(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)

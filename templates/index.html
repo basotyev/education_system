@@ -1,19 +1,22 @@
 {%extends "layout.html" %}
 
 {%block title%}
-Main page
+EduPro - free Python courses
 {%endblock%}
 
 {%block content%}
 	<div class="index_page shadowed">
-
 		<div class="greeting">
-			<h1>JDK welcomes you!</h1>
+			<h1>Click. Create. Enjoy.</h1>
 		</div>
-
 		<div class="columns">
-			<h1>Welcome!</h1>
-			<p>Here you can find courses to learn Python programming language!</p>
+            {% if courses %}
+            {% for course in courses %}
+                <div class="course">course</div>
+            {% endfor %}
+            {% else %}
+			    <p>Here you can find courses to learn Python programming language!</p>
+            {% endif %}
 		</div>
 
 	</div>
