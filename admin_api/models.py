@@ -30,6 +30,7 @@ class Course(models.Model):
     def __str__(self):
         return self.course_name
 
+
 class Course_lessons(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
