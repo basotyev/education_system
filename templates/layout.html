@@ -23,7 +23,16 @@
 		         	<li><a href="{% url 'student:index' %}"><i class="fas fa-home home"></i> Home</a></li>
 		       	 	<li><a href="{% url 'student:about' %}"><i class="fas fa-align-left about"></i> About</a></li>
 		            <li><a href="{% url 'student:team' %}"><i class="fas fa-users team"></i> Team</a></li>
-		            <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt login"></i> Login</a></li>
+		            {%block login%}
+                {% if user.is_authenticated%}
+                    <li><a href="{% url 'logout' %}"><i class="fas fa-sign-in-alt login"></i> Logout </a></li>
+                    <li><a href="{% url 'student:profile' user.username%}">{{user.username}}</a></li>
+
+                {%else%}
+                	<li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt login"></i> Login</a></li>
+					<li><a href="{% url 'student:registration' %}"><i class="fas fa-sign-in-alt login"></i> Registration</a></li>
+                {%endif%}
+                {%endblock%}
 	            </ul>
 	        </nav>
  			<!--Logo of the menu which will show up when the screen is reduced-->
