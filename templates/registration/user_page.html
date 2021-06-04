@@ -1,0 +1,20 @@
+{%extends "layout.html" %}
+
+{%block title%}
+Profile
+{%endblock%}
+
+{% block content %}
+{%if user %}
+<br>
+<p>Name: {{user.username}}</p>
+<p>Email: {{user.email}}</p>
+<p>User Image: <img src="{{user.user_img.url}}" alt="" width="200" height="200"></p>
+<p>Dob: {{user.last_login}}</p>
+<p>Password: {{user.password}}</p>
+<p>User IMG URL: {{user.user_img.url}}</p>
+<p><a href="#">Change User Info</a></p>
+{%else%}
+<p>{{user}}</p>
+{% endif %}
+{% endblock %}
