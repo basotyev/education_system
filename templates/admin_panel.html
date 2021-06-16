@@ -1,0 +1,33 @@
+{%extends "layout.html" %}
+
+{%block title%}
+About
+{%endblock%}
+
+{%block content%}
+
+<div class="shadowed p-5 mb-5 mt-2">
+    <div class="row text-center">
+        <div class="col">
+            <h1 class="admin-title"><b>Admin panel</b></h1>
+        </div>
+    </div>
+    <div class="row mt-5 text-center">
+        <div class="col-3 admin-text">
+            <a href="http://127.0.0.1:8000/user_all/">All Users</a><br>
+        </div>
+        <div class="col-3 admin-text">
+            <a href="http://127.0.0.1:8000/create_user/">Create User</a><br>
+        </div>
+            {#    <a href="http://127.0.0.1:8000/update_user/">Update User</a><br>#}
+    <div class="col-3 admin-text">
+        <a href="http://127.0.0.1:8000/course_all/">All Courses</a><br>
+    </div>
+    <div class="col-3 admin-text">
+        <a href="http://127.0.0.1:8000/create_course/">Create Course</a><br>
+    </div>
+        {#<a href="http://127.0.0.1:8000/update_course/">Update Course</a><br>#}
+    </div>
+</div>
+
+{%endblock%}

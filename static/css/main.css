@@ -66,7 +66,9 @@ main {
  	padding: 12px;
  	transition: .3s linear;
  	margin-right: 10px;
+    text-decoration: none;
 }
+
 
 .navigation li a:hover{
 	background: #e6f9ff;
@@ -363,7 +365,7 @@ main
 
 .shadowed
 {
-  max-width: 80%;
+  width: 80%;
   background-color: #1a1a1a;
   box-shadow:0 0 10px #333333, 0 0 30px #333333, 0 0 50px #333333;
   border-radius: 15px;
@@ -569,6 +571,45 @@ main
   border-radius: 25px;
 }
 
+.course-title a{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
 
+.homework-text{
+    color: white;
+}
 
+.login-form form input{
+    width: 320px;
+    height: 40px;
+}
+.login-form{
+    color:white;
+}
+
+/*Admin panel*/
+.admin-title{
+    color:white;
+    font-size: 40px;
+}
+
+.admin-text a{
+    text-decoration: none;
+    color:white;
+    font-size: 30px;
+}
+
+.profile-text h1,h2{
+    color: white;
+}
+
+.all-users h1,h2{
+    color:white;
+}
+
+.teacher-text h4{
+    color:white;
+}
 

@@ -1,0 +1,32 @@
+{%extends "layout.html" %}
+
+{%block title%}
+Team
+{%endblock%}
+
+{%block content%}
+
+<div class="shadowed mt-2 mb-5 p-5">
+    <div class="text-center">
+    <iframe width="950" height="500" src="https://www.youtube.com/embed/k9TUPpGqYTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="homework-text mt-5">
+    <h1>Homework:</h1>
+    <h3>Print Hello World in console</h3>
+    <br>
+    <h4>Put your solution here</h4>
+    </div>
+<form method = 'POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {% for field in create %}
+            <tr>
+                <th style="color:white;font-family: 'Open Sans'">{{field.label}}</th>
+                <td style="height: 60px; width: 100px;">{{ field }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button type="submit" class="btn btn-lg btn-warning">Submit</button>
+    </form>
+</div>
+{%endblock%}

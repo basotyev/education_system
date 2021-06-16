@@ -1,43 +1,20 @@
 {% extends "layout.html" %}
-{%block title%}
-Login
-{%endblock%}
-a
+
 {% block content %}
 
-  {% if form.errors %}
-    <p>Your username and password didn't match. Please try again.</p>
-  {% endif %}
+{% load crispy_forms_tags %}
 
-  {% if next %}
-    {% if user.is_authenticated %}
-      <p>Your account doesn't have access to this page. To proceed,
-      please login with an account that has access.</p>
-    {% else %}
-      <p>Please login to see this page.</p>
-    {% endif %}
-  {% endif %}
-
-  <form method="post" action="{% url 'login' %}">
-  {% csrf_token %}
-  <table>
-
-  <tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-  </tr>
-
-  <tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-  </tr>
-  </table>
-
-  <input type="submit" value="login" />
-  <input type="hidden" name="next" value="{{ next }}" />
+<!--Login-->
+<div class="shadowed mt-2 mb-5 p-5">
+<div class="container py-5 text-center login-form">
+  <h1>Login</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    <button class="w-25 btn btn-primary mt-3" type="submit">Login</button>
   </form>
-
-  {# Assumes you setup the password_reset view in your URLconf #}
-  <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+</div>
+</div>
 
 {% endblock %}

@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class = "shadowed mt-2 mb-5 p-5 all-users">
+        <h1 class="text-center">List</h1>
+    {% for user in all %}
+        <h2>{{ user.username }}</h2>
+    {% endfor %}
+    </div>
+{% endblock %}
